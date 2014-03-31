@@ -5,9 +5,9 @@ import java.awt.*;
 
 
 public class LoginScreen extends JFrame{
-	JFrame frame = new JFrame();
+	//JFrame frame = new JFrame();
 	private JPanel panel, panel2, panel3;
-	private JButton createUser, loginButton;
+	private JButton createUser, loginButton, viewRecord, viewSummary;
 	private JLabel label;
 	private JTextField userName, password;
 	private Profile[] arrayOfProfiles;
@@ -61,7 +61,6 @@ public class LoginScreen extends JFrame{
 		panel2.setLayout(null);
 		panel2.setLocation(0,0);
 		panel2.setSize(700,700);
-		JButton viewRecord, viewSummary;
 		JLabel success;
 
 		viewRecord = new JButton("View Record");
@@ -73,6 +72,9 @@ public class LoginScreen extends JFrame{
 		success = new JLabel("Login Successful");
 		success.setLocation(300,100);
 		success.setSize(150,30);
+		ActionListener listener = new ClickListener();
+		viewRecord.addActionListener(listener);
+		//viewSummary.addActionListener(listener);
 
 		panel2.add(viewRecord);
 		panel2.add(viewSummary);
@@ -85,8 +87,20 @@ public class LoginScreen extends JFrame{
 		panel3.setLocation(0,0);
 		panel3.setSize(width,height);
 		JButton cancel,create;
-		JLabel notice, physical, health, cardio, strength, work, slept, pressure, sugar, rate;
+		JLabel notice1 ,notice2 , physical, health, cardio, strength, work, slept, pressure, sugar, rate;
+		cancel = new JButton("Cancel to Main Menu");
+		cancel.setLocation(175,350);
+		cancel.setSize(150,30);
+		create = new JButton("Edit Daily Record");
+		create.setLocation(350,350);
+		create.setSize(150,30);
+		physical = new JLabel("Physical Activities");
+		physical.setLocation(150,50);
+		physical.setSize(150,30);
 		
+		panel3.add(cancel);
+		panel3.add(create);
+		panel3.add(physical);
 	}
 	
 	public void createNewProfile(String aName, String aPassword){
@@ -134,9 +148,14 @@ public class LoginScreen extends JFrame{
 					repaint();
 				}
 			}
-			//else if(source == viewRecord){
-				//ViewRecordOverview();
-			//}
+			else if(source == viewRecord){
+				ViewRecordOverview();
+				getContentPane().removeAll();
+				getContentPane().add(panel3);
+				setTitle("View Record Overview");
+				validate();
+				repaint();
+			}
 			//else if(source == viewSummary){
 				//PickSummary();
 			//}
