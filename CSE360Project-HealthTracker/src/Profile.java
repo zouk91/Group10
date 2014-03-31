@@ -7,6 +7,7 @@ public class Profile {
 	public Profile(){
 		name = null;
 		password = null;
+		ProfileRecords allRecords = new ProfileRecords();
 	}
 	public Profile(String newname, String newpassword){
 		name = newname;
