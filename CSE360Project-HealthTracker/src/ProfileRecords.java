@@ -6,11 +6,20 @@ public class ProfileRecords {
 	ProfileRecords(){
 		e = new dailyRecord();
 		list = new LinkedList();
-		list.addFirst(e);
-		
+		list.add(e);
 	}
 	//getRecords(String start, String end){
 		//
 	//}
-	
+	dailyRecord getDaily(){
+		return e;
+	}
+	/*dailyRecord[] lastWeekRecords(){
+		dailyRecord[] lastWeek = new dailyRecord[7];
+		int i = 0;
+		while(i != 7){
+			list.get
+		}
+		return lastWeek;
+	}*/
 }

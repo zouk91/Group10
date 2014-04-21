@@ -1,29 +1,27 @@
 public class FitnessRecord 
 {
 	
-	public int cardio = 0;
-	public int strength = 0;
-	public int work = 0;
-	public int sleep = 0;
-	public int weight = 0;
+	int cardio;
+	int strength;
+	int work;
+	int sleep;
+	int weight;
 	
-	public static void main(String[] args) 
-	{
-		// TODO Auto-generated method stub
-
+	FitnessRecord(){
+		cardio = 0;
+		strength = 0;
+		work = 0;
+		sleep = 0;
+		weight = 0;
 	}
-	public int getAllInfo()
-	{
-		return cardio;
-		//return strength;
-		//return work;
-		//return sleep;
-		//return weight;
-		
-		
+	public String toString(){
+		return "<html>" +cardio/60 + " Hours\t"+ cardio %60 + " Minutes<br><br>"
+						+strength/60 + " Hours\t" + strength %60 +" Minutes<br><br>"
+						+work/60 + " Hours\t" + work %60 + " Minutes<br><br>"
+						+sleep/60 + " Hours\t" + sleep %60 + " Minutes<br><br>"
+						+"<html>";	
 	}
-	public int getCardio()
-	{
+	public int getCardio(){
 		return cardio;
 		
 	}
