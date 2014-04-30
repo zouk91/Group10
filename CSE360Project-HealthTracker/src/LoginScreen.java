@@ -442,7 +442,7 @@ public class LoginScreen extends JFrame
 			validate();
 			repaint();
 		}
-		//else if(source == viewSummary){
+		else if(source == viewSummary){
 			//PickSummary();
 		//}
 		//else if(source == weeklySummary){
