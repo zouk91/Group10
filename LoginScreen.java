@@ -7,8 +7,8 @@ import java.awt.*;
 public class LoginScreen extends JFrame 
 						 implements ActionListener{
 	private static JFrame frame = new JFrame();
-	private  JPanel panel, panel2, panel3, panel4, panel5;
-	private JButton createUser, loginButton, viewRecord, viewSummary, cancel, create,edit,logOut,createNew,printWeek, printMonth, previousWeek, nextWeek ;
+	private  JPanel panel, panel2, panel3, panel4, panel5,panel6;
+	private JButton createUser, loginButton, viewRecord, viewSummary, cancel, create,edit,logOut,createNew,printWeek, printMonth, previousWeek, nextWeek,editProfile,changeProfile,deleteProfile;
 	private JLabel label;
 	private JTextField userName, password;
 	private JComboBox cardioHours,cardioMinutes,strengthHours,strengthMinutes,workHours,workMinutes,sleepHours,sleepMinutes;
@@ -85,6 +85,11 @@ public class LoginScreen extends JFrame
 		logOut = new JButton("Log Out");
 		logOut.setLocation(150,450);
 		logOut.setSize(200,50);
+		editProfile = new JButton("Edit Profile");
+		editProfile.setLocation(275,360);
+		editProfile.setSize(200,50);
+		
+		
 		
 		success = new JLabel("Select an Option Below");
 		success.setLocation(250,100);
@@ -95,12 +100,48 @@ public class LoginScreen extends JFrame
 		createNew.addActionListener(this);
 		logOut.addActionListener(this);
 		viewSummary.addActionListener(this);
+		editProfile.addActionListener(this);
 
 		panel2.add(viewRecord);
 		panel2.add(viewSummary);
 		panel2.add(logOut);
 		panel2.add(createNew);
 		panel2.add(success);
+		panel2.add(editProfile);
+	}
+	void EditProfile(){
+		panel6 = new JPanel();
+		panel6.setLayout(null);
+		panel6.setLocation(0,0);
+		panel6.setSize(700,700);
+		JLabel success;
+		
+		changeProfile = new JButton("change password");
+		changeProfile.setLocation(275,150);
+		changeProfile.setSize(200,50);
+		deleteProfile = new JButton("delete username");
+		deleteProfile.setLocation(275,220);
+		deleteProfile.setSize(200,50);
+		cancel = new JButton("Cancel");
+		cancel.setLocation(150,450);
+		cancel.setSize(150,30);
+
+		success = new JLabel("Select an Option Below");
+		success.setLocation(250,100);
+		success.setSize(220,30);
+		success.setFont(new Font("Dialog",Font.BOLD,18));
+		
+		
+		
+		changeProfile.addActionListener(this);
+		deleteProfile.addActionListener(this);
+		cancel.addActionListener(this);
+		
+		panel6.add(changeProfile);
+		panel6.add(deleteProfile);
+		panel6.add(success);
+		panel6.add(cancel);
+		
 	}
 	
 	void ViewRecordOverview(){
