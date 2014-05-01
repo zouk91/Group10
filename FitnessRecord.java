@@ -1,5 +1,4 @@
-public class FitnessRecord 
-{
+public class FitnessRecord {
 	
 	int cardio;
 	int strength;
@@ -20,6 +19,13 @@ public class FitnessRecord
 						+work/60 + " Hours\t" + work %60 + " Minutes<br><br>"
 						+sleep/60 + " Hours\t" + sleep %60 + " Minutes<br><br>"
 						+"<html>";	
+	}
+	public String toStringMins(){
+		return "<html>" + cardio + " Mins<br><br>"
+				+strength + " Mins<br><br>"
+				+work/60 + " Mins<br><br>"
+				+sleep/60 + " Mins<br><br>"
+				+"<html>";
 	}
 	public int getCardio(){
 		return cardio;
